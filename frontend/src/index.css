@@ -1,0 +1,6 @@
+/* WHY: This loads Tailwind's base styles and utility classes into the app. */
+@import "tailwindcss";
+/* WHY: Load the shared brand theme after Tailwind so its defaults are consistent. */
+@import "./styles/theme.css";
+/* WHY: Keep header, menu, and footer presentation separate from the color and font tokens. */
+@import "./styles/layout.css";

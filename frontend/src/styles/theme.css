@@ -1,0 +1,114 @@
+/* WHY: Keep the storefront's colors and font choices together so they are easy to change. */
+:root {
+  --color-black: #000;
+  --color-white: #fff;
+  --color-border: rgb(0 0 0 / 18%);
+  --font-body: Arial, Helvetica, sans-serif;
+  --font-heading: Arial, Helvetica, sans-serif;
+}
+
+/* WHY: Set a consistent monochrome foundation before any storefront components render. */
+body {
+  margin: 0;
+  background-color: var(--color-white);
+  color: var(--color-black);
+  font-family: var(--font-body);
+}
+
+/* WHY: Make headings feel like the same minimal streetwear brand across the site. */
+.section-heading {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.section-heading--center {
+  text-align: center;
+  justify-items: center;
+}
+
+.section-heading__eyebrow,
+.section-heading__title {
+  margin: 0;
+  color: var(--color-black);
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+}
+
+.section-heading__eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+}
+
+.section-heading__title {
+  font-size: clamp(1.75rem, 4vw, 3rem);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1.05;
+}
+
+.section-heading__description {
+  max-width: 38rem;
+  margin: 0;
+  color: var(--color-black);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* WHY: Give buttons a shared, accessible look while keeping their variants simple. */
+.button {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-black);
+  padding: 0.75rem 1.25rem;
+  font: 600 0.75rem/1 var(--font-body);
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    background-color 150ms ease,
+    color 150ms ease;
+}
+
+.button--primary {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+.button--primary:hover {
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
+.button--secondary {
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
+.button--secondary:hover {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--color-black);
+  outline-offset: 3px;
+}
+
+.button:disabled {
+  cursor: not-allowed;
+}
+
+/* WHY: Keep page content aligned and spacious with one reusable responsive wrapper. */
+.container {
+  width: min(100% - 3rem, 80rem);
+  margin-inline: auto;
+}
+
+@media (min-width: 48rem) {
+  .container {
+    width: min(100% - 5rem, 80rem);
+  }
+}
